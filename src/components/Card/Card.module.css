@@ -1,0 +1,32 @@
+.Card{
+    display: flex;
+    flex-direction: column;
+
+}
+.container{
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    border-radius: 8px;
+    width: max-content;
+    margin-bottom: 0.4rem;
+}
+
+.pills{
+    background-color: var(--color-black);
+    width: max-content;
+    color: var(--color-white);
+    margin: 6px;
+    padding: 4px 8px;
+    border: 1px solid var(--color-black);
+    border-radius: 10px;
+    font-size: 10px;
+    line-height: 15px;
+    font-weight: 400;
+}
+.title{
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+}
