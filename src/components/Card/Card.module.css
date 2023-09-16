@@ -32,3 +32,10 @@
     text-overflow: ellipsis;
 }
 
+.pill{
+    font-size: 12px;
+    padding: 6px;
+    width: max-content;
+    background-color: var(--color-black);
+    border-radius: 10px;
+}

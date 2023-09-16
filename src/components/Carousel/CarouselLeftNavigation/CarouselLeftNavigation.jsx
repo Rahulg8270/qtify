@@ -2,7 +2,7 @@ import React from 'react'
 import { useState,useEffect } from 'react'
 import { useSwiper } from 'swiper/react'
 import {ReactComponent as LeftArrow} from '../../../assets/leftArrow.svg'
-import styles from './../Carousel.module.css'
+import styles from './CarouselLeftNavigation.module.css'
 
 const CarouselLeftNavigation = () => {
     const swiper = useSwiper();
