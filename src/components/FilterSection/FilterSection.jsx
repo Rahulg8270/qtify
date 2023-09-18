@@ -1,4 +1,4 @@
-import React from 'react'
+// import React, { useState } from 'react'
 import styles from './FilterSection.module.css'
 import { Box, CircularProgress } from '@mui/material'
 import Card from "../Card/Card";
@@ -6,8 +6,17 @@ import Card from "../Card/Card";
 import Carousel from "../Carousel/Carousel";
 import BasicTabs from '../BasicTabs/BasicTabs';
 
-const FilterSection = ({ title, data, type, filteredData = null, filteredDataValues = [], value, handleChange, toggle = false, handleToggle = null }) => {
-  // console.log(data)
+const FilterSection = ({ 
+  title, 
+  data, 
+  type, 
+  filteredData, 
+  filteredDataValues, 
+  value, 
+  handleChange, 
+  toggle, 
+}) => {
+  console.log(filteredDataValues)
   return (
     <div>
       <div className={styles.header}>
@@ -26,7 +35,7 @@ const FilterSection = ({ title, data, type, filteredData = null, filteredDataVal
                 {
                   filteredDataValues.map((item) => {
                     return (
-                      <Card data={item} type={type} />
+                      <Card data={item} type={type} key={item.id} />
                     )
                   })
                 }

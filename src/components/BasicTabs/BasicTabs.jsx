@@ -7,7 +7,6 @@ import Box from '@mui/material/Box'
 
 function CustomTabPanel(props) {
     const {children, value, index, ...other} = props;
-
     return (
         <div
             role='tabpanel'
@@ -38,21 +37,20 @@ function CustomTabPanel(props) {
         };
     }
     export default function BasicTabs() {
-        const [value,setValue] = React.useState(0);
-        
+        const [value,setValue] = React.useState(0)
+
         const handleChange = (event,newValue) => {
             setValue(newValue)
         }
-
         return (
             <Box sx={{ width:'100%' }}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                    <Tabs value={value} onChange={handleChange} aria-label='basic tabs'indicatorColor='secondary' textColor='' >
-                        <Tab label="All" {...allyProps(0)}/>
-                        <Tab label="Rock" {...allyProps(1)}/>
-                        <Tab label="Pop" {...allyProps(2)}/>
-                        <Tab label="Jazz" {...allyProps(3)}/>
-                        <Tab label="Blues" {...allyProps(4)}/>
+                    <Tabs value={value} onChange={handleChange} aria-label='basic tabs'indicatorColor='secondary' textColor='#34c94b' >
+                        <Tab label="all" {...allyProps(0)}/>
+                        <Tab label="rock" {...allyProps(1)}/>
+                        <Tab label="pop" {...allyProps(2)}/>
+                        <Tab label="jazz" {...allyProps(3)}/>
+                        <Tab label="blues" {...allyProps(4)}/>
                     </Tabs>
                     <CustomTabPanel value={value} index={0}>
                         All

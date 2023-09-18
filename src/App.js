@@ -23,24 +23,30 @@ function App() {
   const generateSongsData = (value) => {
     let key;
     if(value === 0){
-      setNewAlbumSongs(newAlbumSongs)
+      filteredData(newAlbumSongs)
       return;
     }
     else if(value === 1){
+      console.log(value)
       key = 'rock'
     }
     else if(value === 2){
+      console.log(value)
+
       key = 'pop'
     }
     else if(value === 3){
+      console.log(value)
+
       key = 'jazz'
     }
     else if(value === 4){
+      console.log(value)
+
       key = 'blues'
     }
-    const res = newAlbumSongs.filter(item => item.genre.key === key)
-    console.log(key)
-    setFilteredDataValues(res)
+    const res = newAlbumSongs.filter(item => item.genre.key===key)
+    filteredData(res)
     
   }
 
@@ -82,7 +88,7 @@ function App() {
     generateTopAlbumSongs();
     generateNewAlbumSongs();
   },[])
-
+  console.log(filteredDataValues)
   return (
     <>
     <Navbar />
