@@ -36,12 +36,13 @@ function CustomTabPanel(props) {
             'aria-controls': `simple-tabpanel-${index}`,
         };
     }
-    export default function BasicTabs() {
-        const [value,setValue] = React.useState(0)
+    export default function BasicTabs({value,handleChange}) {
+        // const [value,setValue] = React.useState(0)
 
-        const handleChange = (event,newValue) => {
-            setValue(newValue)
-        }
+        // const handleChange = (event,newValue) => {
+        //     setValue(newValue)
+        //     console.log('new value is ' + newValue)
+        // }
         return (
             <Box sx={{ width:'100%' }}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>

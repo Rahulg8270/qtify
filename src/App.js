@@ -14,6 +14,7 @@ function App() {
   const [value,setValue] = React.useState(0)
 
   const handleChange = (event,newValue) => {
+    console.log('handle change is called')
     setValue(newValue)
   }
   const handleToggle = () => {
@@ -21,6 +22,7 @@ function App() {
   }
 
   const generateSongsData = (value) => {
+    let songsList = newAlbumSongs.songs;
     let key;
     if(value === 0){
       filteredData(newAlbumSongs)
@@ -45,7 +47,8 @@ function App() {
 
       key = 'blues'
     }
-    const res = newAlbumSongs.filter(item => item.genre.key===key)
+    
+    const res = songsList.filter(item => item.genre.key===key)
     filteredData(res)
     
   }
@@ -82,13 +85,13 @@ function App() {
     setFilteredDataValues(val)
   }
 
-  
+  console.log(filteredDataValues)
 
   useEffect(() => {
     generateTopAlbumSongs();
     generateNewAlbumSongs();
   },[])
-  console.log(filteredDataValues)
+  
   return (
     <>
     <Navbar />

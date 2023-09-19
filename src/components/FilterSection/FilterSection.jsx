@@ -10,13 +10,10 @@ const FilterSection = ({
   title, 
   data, 
   type, 
-  filteredData, 
-  filteredDataValues, 
+  filteredDataValues,
   value, 
   handleChange, 
-  toggle, 
 }) => {
-  console.log(filteredDataValues)
   return (
     <div>
       <div className={styles.header}>
@@ -30,22 +27,7 @@ const FilterSection = ({
       ) :
         ( 
           <div className={styles.cardsWrapper}>
-            {toggle ? (
-              <div className={styles.wrapper}>
-                {
-                  filteredDataValues.map((item) => {
-                    return (
-                      <Card data={item} type={type} key={item.id} />
-                    )
-                  })
-                }
-              </div>
-            ) 
-            : 
-            (
-            <Carousel data={filteredDataValues} renderCardComponent={(data) => <Card data={data} type={type} />} />
-            )
-            }
+            <Carousel data={data} renderCardComponent={(data) => <Card data={data} type={type} />} />
           </div>
         )}
     </div>
