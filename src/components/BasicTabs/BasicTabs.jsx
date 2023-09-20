@@ -36,13 +36,14 @@ function CustomTabPanel(props) {
             'aria-controls': `simple-tabpanel-${index}`,
         };
     }
-    export default function BasicTabs({value,handleChange}) {
-        // const [value,setValue] = React.useState(0)
+    export default function BasicTabs({filteredData}) {
+        const [value,setValue] = React.useState(0)
 
-        // const handleChange = (event,newValue) => {
-        //     setValue(newValue)
+        const handleChange = (event,newValue) => {
+               filteredData(newValue)
+               setValue(newValue)
         //     console.log('new value is ' + newValue)
-        // }
+        }
         return (
             <Box sx={{ width:'100%' }}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
@@ -53,7 +54,7 @@ function CustomTabPanel(props) {
                         <Tab label="jazz" {...allyProps(3)}/>
                         <Tab label="blues" {...allyProps(4)}/>
                     </Tabs>
-                    <CustomTabPanel value={value} index={0}>
+                    {/* <CustomTabPanel value={value} index={0}>
                         All
                     </CustomTabPanel>
                     <CustomTabPanel value={value} index={1}>
@@ -67,7 +68,7 @@ function CustomTabPanel(props) {
                     </CustomTabPanel>
                     <CustomTabPanel value={value} index={4}>
                         Blues
-                    </CustomTabPanel>
+                    </CustomTabPanel> */}
                 </Box>
             </Box>
         )

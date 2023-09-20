@@ -14,7 +14,6 @@ function App() {
   const [value,setValue] = React.useState(0)
 
   const handleChange = (event,newValue) => {
-    console.log('handle change is called')
     setValue(newValue)
   }
   const handleToggle = () => {
@@ -22,7 +21,7 @@ function App() {
   }
 
   const generateSongsData = (value) => {
-    let songsList = newAlbumSongs.songs;
+    let songData = newAlbumSongs[0].songs
     let key;
     if(value === 0){
       filteredData(newAlbumSongs)
@@ -47,16 +46,18 @@ function App() {
 
       key = 'blues'
     }
-    
-    const res = songsList.filter(item => item.genre.key===key)
-    filteredData(res)
+    console.log(key + ' is comming from generateSongsData function')
+    // console.log((newAlbumSongs[0].songs))
+    for(let item in songData){
+      return songData[item].genre.key === key
+    }
+    // songData.filter(item => )
+    // const res = newAlbumSongs.filter(item => item.genre.key===key)
+    // filteredData(res)
     
   }
 
-  useEffect(() => {
-    generateSongsData(value)
-    // eslint-disable-next-line
-  },[value])
+  
 
   const generateTopAlbumSongs = async() => {
     try{
@@ -82,10 +83,16 @@ function App() {
   
   
   const filteredData = (val) => {
-    setFilteredDataValues(val)
+    // setFilteredDataValues(val)
+    generateSongsData(val)
+    console.log(val + ' filteredData is called from app.js')
   }
 
-  console.log(filteredDataValues)
+  useEffect(() => {
+    
+
+    // eslint-disable-next-line
+  },[value])
 
   useEffect(() => {
     generateTopAlbumSongs();

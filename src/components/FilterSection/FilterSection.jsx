@@ -10,6 +10,7 @@ const FilterSection = ({
   title, 
   data, 
   type, 
+  filteredData,
   filteredDataValues,
   value, 
   handleChange, 
@@ -19,7 +20,7 @@ const FilterSection = ({
       <div className={styles.header}>
         <h3>{title}</h3>
       </div>
-      <BasicTabs value={value} handleChange={handleChange} />
+      <BasicTabs value={value} handleChange={handleChange} filteredData={filteredData}/>
       {data.length === 0 ? (
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <CircularProgress />
@@ -27,7 +28,7 @@ const FilterSection = ({
       ) :
         ( 
           <div className={styles.cardsWrapper}>
-            <Carousel data={data} renderCardComponent={(data) => <Card data={data} type={type} />} />
+            <Carousel data={filteredDataValues} renderCardComponent={(data) => <Card data={data} type={type} />} />
           </div>
         )}
     </div>
