@@ -7,22 +7,15 @@ import { useEffect, useState } from 'react'
 import { fetchTopAlbums, fetchNewAlbums } from './api/api'
 import styles from './App.module.css'
 function App() {
+  
   const [topAlbumSongs, setTopAlbumSongs] = useState([])
   const [newAlbumSongs, setNewAlbumSongs] = useState([])
-  const [filteredDataValues, setFilteredDataValues] = useState([])
+  
+  const [filteredDataValues, setFilteredDataValues] = useState([''])
   const [toggle, setToggle] = useState(false)
   const [value, setValue] = React.useState(0)
-  
-  const handleChange = (event, newValue) => {
-    setValue(newValue)
-  }
-  const handleToggle = () => {
-    setToggle(!toggle)
-  }
-  // const generateDefaultData = () => {
-  //   let dataDefault = newAlbumSongs[0].songs;
-  //   setFilteredDataValues(dataDefault)
-  // }
+
+
   const generateSongsData = (value) => {
     let songData = newAlbumSongs[0].songs;
     let key;
@@ -48,7 +41,13 @@ function App() {
     setFilteredDataValues(data)
   }
 
-
+  const handleChange = (event, newValue) => {
+    setValue(newValue)
+    generateSongsData(newValue)
+  }
+  const handleToggle = () => {
+    setToggle(!toggle)
+  }
 
   const generateTopAlbumSongs = async () => {
     try {
@@ -82,22 +81,13 @@ function App() {
     // eslint-disable-next-line
   }, [value])
 
-  // useEffect(() => {
-  //   setFilteredDataValues(songDataAll)
-  // },[songDataAll])
   
   useEffect(() => {
     
     generateTopAlbumSongs();
     generateNewAlbumSongs();
-    // generateDefaultData()
     // eslint-disable-next-line
   }, [])
-  // useEffect(() => {
-    
-   
-    // eslint-disable-next-line
-  // },[])
   return (
     <>
       <Navbar />

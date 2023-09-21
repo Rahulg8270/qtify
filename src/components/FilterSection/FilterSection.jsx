@@ -5,8 +5,8 @@ import Card from "../Card/Card";
 // import CustomTabPanel from '../BasicTabs/BasicTabs'
 import Carousel from "../Carousel/Carousel";
 import BasicTabs from '../BasicTabs/BasicTabs';
-import { useEffect } from 'react';
-// import { useEffect } from 'react';
+
+
 
 const FilterSection = ({ 
   title, 
@@ -17,7 +17,7 @@ const FilterSection = ({
   value, 
   handleChange, 
 }) => {
-  
+
   return (
     <div>
       <div className={styles.header}>
