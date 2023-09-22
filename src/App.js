@@ -3,6 +3,7 @@ import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
 import Section from './components/Section/Section'
 import FilterSection from './components/FilterSection/FilterSection'
+import Faq from './components/Faq/Faq'
 import { useEffect, useState } from 'react'
 import { fetchTopAlbums, fetchNewAlbums } from './api/api'
 import styles from './App.module.css'
@@ -96,6 +97,7 @@ function App() {
         <Section type='album' title='Top Albums' data={topAlbumSongs} />
         <Section type='album' title='New Albums' data={newAlbumSongs} />
         <FilterSection data={newAlbumSongs} type='songFilter' title='Songs' filteredData={filteredData} filteredDataValues={filteredDataValues} value={value} handleChange={handleChange} handleToggle={handleToggle}/>
+        <Faq />
       </div>
     </>
   )

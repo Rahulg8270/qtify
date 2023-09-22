@@ -1,0 +1,13 @@
+.faqSection{
+    height: auto;
+    margin: 40px 0;
+}
+.faqContainer{
+    width: 80%;
+    margin: auto;
+}
+header > h1{
+    text-align: center;
+    font-size: 50px;
+    line-height: 75px;
+}
